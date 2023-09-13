@@ -3,7 +3,7 @@ name: Copy HTML to GitHub Pages
 on:
   push:
     branches:
-      - main  # You can change this to your default branch name
+      - main  # Change this to your default branch if necessary
 
 jobs:
   build:
@@ -15,5 +15,5 @@ jobs:
 
     - name: Copy HTML to Pages
       run: |
-        cp ../inv.html ./docs/inv.html
+        cp inv.html ./docs/inv.html
       working-directory: ${{ github.workspace }}
