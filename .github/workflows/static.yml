@@ -27,7 +27,7 @@ jobs:
 
     - name: Copy HTML to Pages
       run: |
-        cp inv.html ${{ github.workspace }}/docs/inv.html
+        cp ./inv.html ${{ github.workspace }}/docs/inv.html
 
     - name: Commit and push changes
       run: |
