@@ -13,6 +13,10 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Create /docs directory
+      run: mkdir -p ./docs
+      working-directory: ${{ github.workspace }}
+
     - name: Copy HTML to Pages
       run: |
         cp inv.html ./docs/inv.html
