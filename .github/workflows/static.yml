@@ -15,5 +15,5 @@ jobs:
 
     - name: Copy HTML to Pages
       run: |
-        cp ../../inv.html ./docs/inv.html
+        cp ../inv.html ./docs/inv.html
       working-directory: ${{ github.workspace }}
