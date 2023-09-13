@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wedding Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            background-color: #f7f7f7;
+        }
+
+        .chapter {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #f7f7f7;
+            transition: background-color 1s ease-in-out;
+        }
+
+        .chapter:nth-child(even) {
+            background-color: #fff;
+        }
+
+        .chapter h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .chapter p {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .chapter:last-child {
+            margin-bottom: 0;
+        }
+
+        .footer {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            transition: background-color 1s ease-in-out;
+        }
+
+        .footer h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer p {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer li {
+            margin: 0 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer li:before {
+            content: "•";
+            margin-right: 0.5rem;
+        }
+
+        .footer p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="chapter" id="chapter1">
+        <h1>Wedding Invitation</h1>
+        <p>You are cordially invited to the wedding of John and Jane.</p>
+    </div>
+
+    <div class="chapter" id="chapter2">
+        <h1>When and Where</h1>
+        <p>The wedding will take place on Saturday, August 14th, 2021 at 2:00 PM.</p>
+        <p>The ceremony and reception will be held at the beautiful Rosewood Estate.</p>
+        <p>1234 Main Street<br>Anytown, USA</p>
+    </div>
+
+    <div class="chapter" id="chapter3">
+        <h1>What to Bring</h1>
+        <p>Please bring your dancing shoes and your appetite!</p>
+        <p>We will be serving a delicious dinner and there will be plenty of dancing.</p>
+    </div>
+
+    <div class="chapter" id="chapter4">
+        <h1>Dress Code</h1>
+        <p>The dress code for the wedding is semi-formal.</p>
+        <p>Men should wear a suit and tie, and women should wear a cocktail dress or a dressy skirt and top.</p>
+    </div>
+
+    <div class="footer">
+        <h1>RSVP</h1>
+        <p>Please let us know if you can attend by August 1st, 2021.</p>
+        <ul>
+            <li>John Doe: 555-1234</li>
+            <li>Jane Doe: 555-5678</li>
+        </ul>
+        <p>We can't wait to celebrate with you!</p>
+    </div>
+
+    <script>
+        let chapterCount = 1;
+
+        window.addEventListener('scroll', () => {
+            const lastChapter = document.querySelector(`#chapter${chapterCount}`);
+            const lastChapterBottom = lastChapter.getBoundingClientRect().bottom;
+
+            if (lastChapterBottom <= window.innerHeight) {
+                chapterCount++;
+
+                const newChapter = document.createElement('div');
+                newChapter.classList.add('chapter');
+                newChapter.setAttribute('id', `chapter${chapterCount}`);
+
+                const newChapterTitle = document.createElement('h1');
+                newChapterTitle.textContent = `Chapter ${chapterCount}`;
+
+                const newChapterContent = document.createElement('p');
+                newChapterContent.textContent = `This is chapter ${chapterCount}.`;
+
+                newChapter.appendChild(newChapterTitle);
+                newChapter.appendChild(newChapterContent);
+
+                document.body.appendChild(newChapter);
+            }
+        });
+    </script>
+</body>
+</html>
