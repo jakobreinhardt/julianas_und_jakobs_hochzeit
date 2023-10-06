@@ -118,6 +118,24 @@
         .footer p:last-child {
             margin-bottom: 0;
         }
+
+        .back-to-top-button {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        padding: 0.5rem;
+        font-size: 0.8rem;
+        background-color: #333;
+        color: white;
+        border: none;
+        border-radius: 0.5rem;
+        cursor: pointer;
+    }
+
+    .back-to-top-button:hover {
+        background-color: #555;
+    }
+
     </style>
 </head>
 
@@ -126,7 +144,7 @@
     <nav>
         <h1>Wedding Invitation</h1>
         <ul>
-            <li><a href="#chapter1">Wedding Invitation</a></li>
+            <li><a href="#chapter1">Home</a></li>
             <li><a href="#chapter2">When and Where</a></li>
             <li><a href="#chapter3">What to Bring</a></li>
             <li><a href="#chapter4">Dress Code</a></li>
@@ -137,11 +155,13 @@
 
 
     <div class="chapter" id="chapter1">
+        <a href="#top">Back to top</a>
         <h1>Wedding Invitation</h1>
         <p>You are cordially invited to the wedding of Juliana and Jakob.
             <iframe src="https://giphy.com/embed/wG1i2KJyB3zlC" width="480" height="367" frameBorder="0"
                 class="giphy-embed" allowFullScreen></iframe>
         <p><a href="https://giphy.com/gifs/flowers-cartoon-the-simpsons-wG1i2KJyB3zlC"></a></p>
+        <button class="back-to-top-button" onclick="window.scrollTo(0, 0)">Back to top</button>
         </p>
     </div>
 
