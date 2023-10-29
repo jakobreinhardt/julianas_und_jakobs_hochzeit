@@ -136,6 +136,20 @@
             background-color: #555;
         }
 
+            /* Styles for the triangle shape */
+        .back-to-top-button::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 0 0.5rem 0.5rem 0.5rem;
+            border-color: transparent transparent #fff transparent;
+            position: absolute;
+            top: 0.5rem;
+            left: 0.5rem;
+        }
+
 
         @media (max-width: 1070px) {
             nav {
@@ -208,10 +222,7 @@
     <div class="chapter" id="home">
         <h1>Einladung</h1>
         <p>Wir laden euch ganz herzlich zu unserer Hochzeit ein.
-            <iframe src="https://giphy.com/embed/wG1i2KJyB3zlC" width="480" height="367" frameBorder="0"
-                class="giphy-embed" allowFullScreen></iframe>
-        <p><a href="https://giphy.com/gifs/flowers-cartoon-the-simpsons-wG1i2KJyB3zlC"></a></p>
-        <button class="back-to-top-button" onclick="window.scrollTo(0, 0)"> ^ </button>
+            <button class="back-to-top-button" onclick="window.scrollTo(0, 0)"> ^ </button>
         </p>
     </div>
 
@@ -260,7 +271,7 @@
                 target="_blank" rel="noopener"></a></div>
     </div>
 
-    <div class="chapter", id="rsvp">
+    <div class="chapter" , id="rsvp">
         <h1>RSVP</h1>
         <p>Bitte gebt uns bis zum _ bescheid ob ihr kommen könnt.</p>
         <ul>
@@ -268,6 +279,9 @@
             <li>Jane Doe: 555-5678</li>
         </ul>
         <p>Wir freuen uns darauf mit euch zu feiern!</p>
+        <iframe src="https://giphy.com/embed/wG1i2KJyB3zlC" width="480" height="367" frameBorder="0" class="giphy-embed"
+            allowFullScreen></iframe>
+        <p><a href="https://giphy.com/gifs/flowers-cartoon-the-simpsons-wG1i2KJyB3zlC"></a></p>
     </div>
 
 </body>
