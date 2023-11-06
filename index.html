@@ -144,6 +144,55 @@
         }
 
 
+        .balloon {
+            position: absolute;
+            bottom: 0;
+            width: 200px;
+            height: 200px;
+            background-image: url('files/balloons.png');
+            background-size: cover;
+            border-radius: 50%;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        #balloon-left {
+            left: 4rem;
+        }
+
+        #balloon-right {
+            right: 4rem;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+
+        .responsive-image {
+            width: 20%;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
         @media (max-width: 1070px) {
 
             .chapter h1 {
@@ -161,6 +210,10 @@
                 right: 2rem;
             }
 
+            .responsive-image {
+                width: 50%;
+            }
+
         }
     </style>
 </head>
@@ -168,7 +221,7 @@
 <body>
 
     <nav>
-        <h1>Jerry gets married</h1>
+        <h1>Party of the year</h1>
         <ul>
             <li><a href="#home">Home</a></li>
             <li><a href="#wannundwo">Wann und Wo</a></li>
@@ -187,6 +240,12 @@
         <p>Wir laden euch ganz herzlich zu unserer Hochzeit ein.
             <button class="back-to-top-button" onclick="window.scrollTo(0, 0)"></button>
         </p>
+
+        <div class="balloons">
+            <div class="balloon" id="balloon-left"></div>
+            <div class="balloon" id="balloon-right"></div>
+        </div>
+
     </div>
 
     <div class="chapter" id="wannundwo">
@@ -216,7 +275,7 @@
         <h1>Party</h1>
         <p>Lets party.</p>
         <p>!.</p>
-        <img src="files/pen.gif" alt="_" style="width: 20%;">
+        <img class="responsive-image" src="files/pen.gif" alt="_">
     </div>
 
     <div class="chapter" id="misc">
@@ -226,8 +285,7 @@
             frameborder="0" scrolling="NO" allowtransparency="true"
             sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
             style="width: 805px; height: 508px"></iframe>
-        <div><a
-                href="https://www.meteoblue.com/de/wetter/woche/garmisch-partenkirchen_deutschland_2922530?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget"
+        <div><a href="https://www.meteoblue.com/de/wetter/woche/garmisch-partenkirchen_deutschland_2922530?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget"
                 target="_blank" rel="noopener"></a></div>
     </div>
 
@@ -236,7 +294,7 @@
         <p>Bitte gebt uns bis zum _ bescheid ob ihr kommen könnt.</p>
         <p>Wir freuen uns darauf mit euch zu feiern!</p>
         <p>Juliana, Jakob & Matilda</p>
-        <img src="files/simp.gif" alt="_" style="width: 20%;">
+        <img class="responsive-image" src="files/simp.gif" alt="_">
     </div>
 
 </body>
