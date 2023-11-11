@@ -58,14 +58,13 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: #399f65;
+            background-color: #f7f7f7;
             transition: background-color 1s ease-in-out;
-            color: rgb(252, 255, 228);
             font-family: 'Roboto', sans-serif;
         }
 
         .chapter:nth-child(even) {
-            background-color: #669966;
+            background-color: #fff;
         }
 
         .chapter h1 {
@@ -136,8 +135,38 @@
             }
         }
 
+        .paraglider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            animation: paraglide 10s infinite;
+        }
+
+        @keyframes paraglide {
+
+            0% {
+                transform: translate(100vw, 0);
+            }
+
+            50% {
+                transform: translate(50vw, -50vh);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
         .responsive-image {
             width: 20%;
+            border: 1px solid black;
+        }
+
+        .responsive-image_large {
+            width: 30%;
+            border: 1px solid black;
         }
 
         ::-webkit-scrollbar {
@@ -174,6 +203,10 @@
             }
 
             .responsive-image {
+                width: 50%;
+            }
+
+            .responsive-image_large {
                 width: 50%;
             }
 
@@ -215,6 +248,7 @@
         <p>Wir laden euch ganz herzlich zu unserer Hochzeit ein.
             <button class="back-to-top-button" onclick="window.scrollTo(0, 0)"></button>
         </p>
+        <img class="responsive-image_large" src="files/IMG_5985.jpg" alt="_">
 
         <div class="balloons">
             <div class="balloon" id="balloon-left"></div>
@@ -235,20 +269,17 @@
 
     <div class="chapter" id="ablauf">
         <h1>Agenda</h1>
-        <p>15:00 Sektempfang.</p>
-        <p>16:00 Kuchen.</p>
-        <p>19:00 Essen.</p>
-        <p>22:00 Party.</p>
+        <p>folgt.</p>
     </div>
 
     <div class="chapter" id="speisekarte">
         <h1>Speisekarte</h1>
+        <p>folgt.</p>
     </div>
 
     <div class="chapter" id="party">
         <h1>Party</h1>
-        <p>Lets party.</p>
-        <p>!.</p>
+        <p>get ready.</p>
         <img class="responsive-image" src="files/pen.gif" alt="_">
     </div>
 
@@ -269,6 +300,7 @@
         <p>Wir freuen uns darauf mit euch zu feiern!</p>
         <p>Juliana, Jakob & Matilda</p>
         <img class="responsive-image" src="files/simp.gif" alt="_">
+        <img class="paraglider" src="files/para.png" alt="Paraglider">
     </div>
 
 </body>
