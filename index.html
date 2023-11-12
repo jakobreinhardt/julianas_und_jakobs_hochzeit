@@ -222,7 +222,7 @@
             }
 
             .chapter p {
-                max-width: 400px;
+                max-width: 600px;
                 font-size: 2.8rem;
             }
 
@@ -364,6 +364,7 @@
 
         if (displayOption === 'balloons') {
             paraglider.style.display = 'none';
+            baby.style.display = 'none';
             balloons.forEach(function (balloon) {
                 balloon.style.display = 'block';
             });
@@ -371,20 +372,20 @@
             balloons.forEach(function (balloon) {
                 balloon.style.display = 'none';
             });
+            baby.style.display = 'none';
             paraglider.style.display = 'block';
-        }
-        else if (displayOption === 'baby') {
+        } else if (displayOption === 'baby') {
             balloons.forEach(function (balloon) {
                 balloon.style.display = 'none';
             });
             paraglider.style.display = 'none';
             baby.style.display = 'block';
-        }
-        else if (displayOption === 'off') {
+        } else if (displayOption === 'off') {
             balloons.forEach(function (balloon) {
                 balloon.style.display = 'none';
             });
             paraglider.style.display = 'none';
+            baby.style.display = 'none';
         }
     });
 </script>
