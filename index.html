@@ -3,10 +3,11 @@
 
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300&display=swap" rel="stylesheet">
     <title>Einladung</title>
     <style>
         nav {
-            background-color: #333;
+            background-color: #3D585D;
             color: white;
             display: flex;
             justify-content: space-between;
@@ -44,6 +45,14 @@
             font-size: 1rem;
         }
 
+        .dropdown {
+            background-color: #3D585D;
+        }
+
+        .dropdown label {
+            color: white;
+        }
+
         body {
             margin: 0;
             padding: 0;
@@ -58,13 +67,15 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            background-color: #f7f7f7;
+            background-color: #45ADAB;
             transition: background-color 1s ease-in-out;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Barlow', sans-serif;
+            color: white;
+            font-size: 18px;
         }
 
         .chapter:nth-child(even) {
-            background-color: #fff;
+            background-color: #43A7A5;
         }
 
         .chapter h1 {
@@ -76,7 +87,7 @@
             max-width: 800px;
             text-align: center;
             margin-bottom: 2rem;
-            font-size: 1.2rem;
+            font-size: 1.6rem;
         }
 
         .chapter:last-child {
@@ -159,6 +170,25 @@
             }
         }
 
+        .baby {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            animation: baby 20s infinite ease-in-out;
+        }
+
+        @keyframes baby {
+
+            0% {
+                transform: translate(-15vw, 0);
+            }
+
+            100% {
+                transform: translate(100vw, 0);
+            }
+        }
+
         .responsive-image {
             width: 20%;
             border: 1px solid black;
@@ -235,16 +265,25 @@
             <li><a href="#home">Home</a></li>
             <li><a href="#wannundwo">Wann und Wo</a></li>
             <li><a href="#ablauf">Ablauf</a></li>
-            <li><a href="#speisekarte">Speisekarte</a></li>
+            <li><a href="#speisekarte">Menüauswahl</a></li>
             <li><a href="#übernachtung">Übernachtung</a></li>
-            <li><a href="#misc">Wetter</a></li>
             <li><a href="#rsvp">RSVP</a></li>
         </ul>
+
+        <div class="dropdown">
+            <label for="display-option">Improve UX:</label>
+            <select id="display-option">
+                <option value="balloons">Balloons</option>
+                <option value="paraglider">Paraglider</option>
+                <option value="baby">Baby</option>
+                <option value="off">Off</option>
+            </select>
+        </div>
+
     </nav>
 
-
     <div class="chapter" id="home">
-        <h1>Einladung</h1>
+        <h1>EINLADUNG</h1>
         <p>Wir laden euch ganz herzlich zu unserer Hochzeit ein.
             <button class="back-to-top-button" onclick="window.scrollTo(0, 0)"></button>
         </p>
@@ -254,55 +293,100 @@
             <div class="balloon" id="balloon-left"></div>
             <div class="balloon" id="balloon-right"></div>
         </div>
+        <img class="paraglider" src="files/para.png" alt="Paraglider">
+        <img class="baby" src="files/baby.png" alt="Baby">
 
     </div>
 
     <div class="chapter" id="wannundwo">
-        <h1>Wann und Wo</h1>
+        <h1>WANN UND WO?</h1>
         <p>27. Juli, 2024.</p>
         <p>Lodge am Hausberg<br>Hausberg 3, 82467 Garmisch-Partenkirchen</p>
         <iframe width="425" height="350"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=11.089941859245302%2C47.48126855779726%2C11.092452406883242%2C47.48250844402469&amp;layer=mapnik"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=11.090008914470674%2C47.48132654839569%2C11.092519462108612%2C47.48256643325449&amp;layer=mapnik&amp;marker=47.481946494482905%2C11.091264188289642"
             style="border: 1px solid black"></iframe><br /><small><a
-                href="https://www.openstreetmap.org/#map=19/47.48189/11.09120"></a></small>
+                href="https://www.openstreetmap.org/?mlat=47.48195&amp;mlon=11.09126#map=19/47.48195/11.09126"></a></small>
     </div>
 
     <div class="chapter" id="ablauf">
-        <h1>Ablauf</h1>
+        <h1>ABLAUF</h1>
         <p>folgt.</p>
         <img class="responsive-image" src="files/pen.gif" alt="_">
     </div>
 
     <div class="chapter" id="speisekarte">
-        <h1>Speisekarte</h1>
+        <h1>MENÜAUSWAHL</h1>
         <p>folgt.</p>
     </div>
 
     <div class="chapter" id="Übernachtung">
-        <h1>Übernachtung</h1>
-        <p>folgt.</p>
-    </div>
-
-    <div class="chapter" id="wetter">
-        <h1>Wetter</h1>
-        <iframe
-            src="https://www.meteoblue.com/de/wetter/widget/three/garmisch-partenkirchen_deutschland_2922530?geoloc=fixed&nocurrent=0&nocurrent=1&noforecast=0&days=7&tempunit=CELSIUS&windunit=KILOMETER_PER_HOUR&layout=bright"
-            frameborder="0" scrolling="NO" allowtransparency="true"
-            sandbox="allow-same-origin allow-scripts allow-popups allow-popups-to-escape-sandbox"
-            style="width: 805px; height: 508px"></iframe>
-        <div><a href="https://www.meteoblue.com/de/wetter/woche/garmisch-partenkirchen_deutschland_2922530?utm_source=weather_widget&utm_medium=linkus&utm_content=three&utm_campaign=Weather%2BWidget"
-                target="_blank" rel="noopener"></a></div>
+        <h1>ÜBERNACHTUNG</h1>
+        <p>Bitte denkt daran, dass im Juli Hochsaison ist und bucht eure Übernachtung rechtzeitig. Wenn man früh dran
+            ist, stehen einem zahlreiche Hotels/AirBnbs etc. zur Auswahl. Für alle, die im Auto übernachten wollen
+            empfehlen wir den Hausbergparkplatz (kostenpflichtig) oder den Parkplatz am Eisstadion (kostenfrei).</p>
     </div>
 
     <div class="chapter" , id="rsvp">
         <h1>RSVP</h1>
-        <p>Bitte gebt uns bis zum 31.12.2023 bescheid ob ihr kommen könnt.</p>
-        <p>Wir freuen uns darauf mit euch zu feiern!</p>
+        <p>Dresscode: Sommerlich</p>
+        <p>Unser größtes Geschenk ist es, an diesem Tag mit euch zu feiern. Falls ihr uns darüberhinaus beschenken
+            möchtet,
+            würden wir uns über eine Beteiligung an unserer Hochzeitsreise freuen. </p>
+        <p>Bitte gebt uns bis zum 31.12.2023 Bescheid, ob ihr kommt.</p>
+        <p>Wir freuen uns schon sehr darauf mit euch zu feiern!</p>
         <p>Juliana, Jakob & Matilda</p>
         <img class="responsive-image" src="files/simp.gif" alt="_">
-        <!-- <img class="paraglider" src="files/para.png" alt="Paraglider"> -->
     </div>
 
 </body>
+
+<script>
+    window.onload = function () {
+        var balloons = document.querySelectorAll('.balloons');
+        var paraglider = document.querySelector('.paraglider');
+        var baby = document.querySelector('.baby');
+
+        // Hide the paraglider by default
+        paraglider.style.display = 'none';
+        baby.style.display = 'none';
+
+        // Show the balloons by default
+        balloons.forEach(function (balloon) {
+            balloon.style.display = 'block';
+        });
+    }
+
+    document.getElementById('display-option').addEventListener('change', function () {
+        var displayOption = this.value;
+        var balloons = document.querySelectorAll('.balloons');
+        var paraglider = document.querySelector('.paraglider');
+        var baby = document.querySelector('.baby');
+
+        if (displayOption === 'balloons') {
+            paraglider.style.display = 'none';
+            balloons.forEach(function (balloon) {
+                balloon.style.display = 'block';
+            });
+        } else if (displayOption === 'paraglider') {
+            balloons.forEach(function (balloon) {
+                balloon.style.display = 'none';
+            });
+            paraglider.style.display = 'block';
+        }
+        else if (displayOption === 'baby') {
+            balloons.forEach(function (balloon) {
+                balloon.style.display = 'none';
+            });
+            paraglider.style.display = 'none';
+            baby.style.display = 'block';
+        }
+        else if (displayOption === 'off') {
+            balloons.forEach(function (balloon) {
+                balloon.style.display = 'none';
+            });
+            paraglider.style.display = 'none';
+        }
+    });
+</script>
 
 </html>
