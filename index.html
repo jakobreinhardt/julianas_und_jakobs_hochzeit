@@ -151,30 +151,6 @@
             }
         }
 
-        .paraglider {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 200px;
-            height: 200px;
-            animation: paraglide 13s infinite;
-        }
-
-        @keyframes paraglide {
-
-            0% {
-                transform: translate(100vw, 0);
-            }
-
-            50% {
-                transform: translate(50vw, -70vh);
-            }
-
-            100% {
-                transform: translate(-30vw, 0);
-            }
-        }
-
         .baby {
             position: absolute;
             bottom: 0;
@@ -287,7 +263,6 @@
             <label for="display-option">Improve UX:</label>
             <select id="display-option">
                 <option value="balloons">Balloons</option>
-                <option value="paraglider">Paraglider</option>
                 <option value="baby">Baby</option>
                 <option value="off">Off</option>
             </select>
@@ -306,7 +281,6 @@
             <div class="balloon" id="balloon-left"></div>
             <div class="balloon" id="balloon-right"></div>
         </div>
-        <img class="paraglider" src="files/para.png" alt="Paraglider">
         <img class="baby" src="files/baby.png" alt="Baby">
 
     </div>
@@ -356,10 +330,8 @@
 <script>
     window.onload = function () {
         var balloons = document.querySelectorAll('.balloons');
-        var paraglider = document.querySelector('.paraglider');
         var baby = document.querySelector('.baby');
 
-        paraglider.style.display = 'none';
         baby.style.display = 'none';
 
         // Show the balloons by default
@@ -371,32 +343,22 @@
     document.getElementById('display-option').addEventListener('change', function () {
         var displayOption = this.value;
         var balloons = document.querySelectorAll('.balloons');
-        var paraglider = document.querySelector('.paraglider');
         var baby = document.querySelector('.baby');
 
         if (displayOption === 'balloons') {
-            paraglider.style.display = 'none';
             baby.style.display = 'none';
             balloons.forEach(function (balloon) {
                 balloon.style.display = 'block';
             });
-        } else if (displayOption === 'paraglider') {
-            balloons.forEach(function (balloon) {
-                balloon.style.display = 'none';
-            });
-            baby.style.display = 'none';
-            paraglider.style.display = 'block';
         } else if (displayOption === 'baby') {
             balloons.forEach(function (balloon) {
                 balloon.style.display = 'none';
             });
-            paraglider.style.display = 'none';
             baby.style.display = 'block';
         } else if (displayOption === 'off') {
             balloons.forEach(function (balloon) {
                 balloon.style.display = 'none';
             });
-            paraglider.style.display = 'none';
             baby.style.display = 'none';
         }
     });
